@@ -1,0 +1,14 @@
+# Force LF line ending (mandatory for Windows)
+* text=auto eol=lf
+
+# Only ship proper code
+/assets            export-ignore
+/node_modules      export-ignore
+/.github           export-ignore
+/.gitattributes    export-ignore
+/.gitignore        export-ignore
+/package.json      export-ignore
+/webpack.config.js export-ignore
+/yarn.lock         export-ignore
+/doc               export-ignore
+/.editorconfig     export-ignore

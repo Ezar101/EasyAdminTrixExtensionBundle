@@ -1,0 +1,335 @@
+.trix-button--icon-heading-2::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='24px' height='24px' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' fill='none' width='24' height='24'/%3E%3Cg%3E%3Cpath d='M9 7h2v10H9v-4H5v4H3V7h2v4h4V7zm8 8c.51-.41.6-.62 1.06-1.05.437-.4.848-.828 1.23-1.28.334-.39.62-.82.85-1.28.2-.39.305-.822.31-1.26.005-.44-.087-.878-.27-1.28-.177-.385-.437-.726-.76-1-.346-.283-.743-.497-1.17-.63-.485-.153-.99-.227-1.5-.22-.36 0-.717.033-1.07.1-.343.06-.678.158-1 .29-.304.13-.593.295-.86.49-.287.21-.56.437-.82.68l1.24 1.22c.308-.268.643-.502 1-.7.35-.2.747-.304 1.15-.3.455-.03.906.106 1.27.38.31.278.477.684.45 1.1-.014.396-.14.78-.36 1.11-.285.453-.62.872-1 1.25-.44.43-.98.92-1.59 1.43-.61.51-1.41 1.06-2.16 1.65V17h8v-2h-4z'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 16px;
+}
+.trix-button--icon-heading-3::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='24px' height='24px' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' fill='none' width='24' height='24'/%3E%3Cg%3E%3Cpath d='M14.11 14.218c.355.287.75.523 1.17.7.434.18.9.273 1.37.27.484.017.965-.086 1.4-.3.333-.146.55-.476.55-.84.003-.203-.05-.403-.15-.58-.123-.19-.3-.34-.51-.43-.32-.137-.655-.228-1-.27-.503-.073-1.012-.106-1.52-.1v-1.57c.742.052 1.485-.07 2.17-.36.37-.164.615-.525.63-.93.026-.318-.12-.627-.38-.81-.34-.203-.734-.3-1.13-.28-.395.013-.784.108-1.14.28-.375.167-.73.375-1.06.62l-1.22-1.39c.5-.377 1.053-.68 1.64-.9.608-.224 1.252-.336 1.9-.33.525-.007 1.05.05 1.56.17.43.1.84.277 1.21.52.325.21.595.495.79.83.19.342.287.73.28 1.12.01.48-.177.943-.52 1.28-.417.39-.916.685-1.46.86v.06c.61.14 1.175.425 1.65.83.437.382.68.94.66 1.52.005.42-.113.835-.34 1.19-.23.357-.538.657-.9.88-.408.253-.853.44-1.32.55-.514.128-1.04.192-1.57.19-.786.02-1.57-.106-2.31-.37-.59-.214-1.126-.556-1.57-1l1.12-1.41zM9 11H5V7H3v10h2v-4h4v4h2V7H9v4z'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 16px;
+}
+.trix-button--icon-underline::before {
+    background-image: url("data:image/svg+xml,%3Csvg fill='%23000000' width='24px' height='24px' viewBox='-64 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3Eunderline%3C/title%3E%3Cpath d='M192 352Q139 352 102 315 64 277 64 224L64 80 128 80 128 224Q128 251 147 270 165 288 192 288 219 288 238 270 256 251 256 224L256 80 320 80 320 224Q320 277 283 315 245 352 192 352ZM64 384L320 384 320 432 64 432 64 384Z'/%3E%3C/svg%3E");
+    background-size: 16px;
+}
+
+.trix-content h1 {
+    font-size: 1.2em;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+/* Nouveau style pour le H2 */
+.trix-content h2 {
+    font-size: 1.15em;
+    line-height: 1.2;
+    margin-bottom: 0.4em;
+}
+
+/* Nouveau style pour le H3 */
+.trix-content h3 {
+    font-size: 1.1em;
+    line-height: 1.2;
+    margin-bottom: 0.3em;
+}
+
+/* =============================================================
+   TRIX TABLE - Toolbar button icon
+   ============================================================= */
+
+.trix-button--icon-table::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'/%3E%3Cline x1='3' y1='9' x2='21' y2='9'/%3E%3Cline x1='3' y1='15' x2='21' y2='15'/%3E%3Cline x1='9' y1='3' x2='9' y2='21'/%3E%3Cline x1='15' y1='3' x2='15' y2='21'/%3E%3C/svg%3E");
+    background-size: 15px;
+}
+
+.trix-button--icon-table.trix-button--active {
+    background: #404040;
+    color: #D4D4D4;
+}
+
+/* =============================================================
+   TRIX TABLE EDITOR MODAL
+   ============================================================= */
+
+.trix-table-editor-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+.trix-table-editor-modal--open {
+    display: flex;
+}
+
+.trix-table-editor-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(2px);
+}
+
+.trix-table-editor-panel {
+    position: relative;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    width: min(92vw, 820px);
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.trix-table-editor-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px 12px;
+    border-bottom: 1px solid #eee;
+    background: #f8f9fa;
+    border-radius: 10px 10px 0 0;
+}
+.trix-table-editor-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d2d2d;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.trix-table-editor-close {
+    border: none;
+    background: none;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    color: #888;
+    padding: 0 4px;
+    border-radius: 4px;
+    transition: color 0.15s, background 0.15s;
+}
+.trix-table-editor-close:hover {
+    color: #333;
+    background: #ebebeb;
+}
+
+/* Mini formatting toolbar */
+.trix-table-editor-format-bar {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 8px 14px;
+    border-bottom: 1px solid #eee;
+    background: #fcfcfc;
+    flex-wrap: wrap;
+}
+.trix-table-editor-format-btn {
+    border: 1px solid transparent;
+    background: transparent;
+    border-radius: 5px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #444;
+    transition: background 0.12s, border-color 0.12s;
+    min-width: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.trix-table-editor-format-btn:hover {
+    background: #e8eaf0;
+    border-color: #d0d4df;
+}
+.trix-table-editor-format-btn--active {
+    background: #dbeafe;
+    border-color: #93c5fd;
+    color: #1d4ed8;
+}
+.trix-table-editor-format-sep {
+    width: 1px;
+    height: 20px;
+    background: #ddd;
+    margin: 0 4px;
+    display: inline-block;
+}
+
+/* Table structure controls */
+.trix-table-editor-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-bottom: 1px solid #eee;
+    background: #fcfcfc;
+    flex-wrap: wrap;
+}
+.trix-table-editor-ctrl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #d5d9e0;
+    background: #fff;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: #444;
+    cursor: pointer;
+    transition: background 0.12s, border-color 0.12s, color 0.12s;
+    white-space: nowrap;
+}
+.trix-table-editor-ctrl-btn:hover {
+    background: #f0f4ff;
+    border-color: #aab4d4;
+    color: #1a3a8c;
+}
+.trix-table-editor-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    font-size: 12px;
+    color: #555;
+    cursor: pointer;
+    user-select: none;
+}
+.trix-table-editor-toggle__input {
+    accent-color: #2563eb;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+
+/* Grid */
+.trix-table-editor-grid-wrapper {
+    flex: 1;
+    overflow: auto;
+    padding: 14px;
+}
+.trix-table-editor-table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+.trix-table-editor-table th,
+.trix-table-editor-table td {
+    border: 1px solid #c9cdd6;
+    padding: 0;
+    position: relative;
+    /* height:1px is a CSS trick: lets child div use height:100% to fill the cell
+       without actually limiting the cell's actual rendered height */
+    height: 1px;
+    vertical-align: top;
+}
+.trix-table-editor-table thead th {
+    background: #eef2ff;
+}
+.trix-table-editor__cell {
+    display: block;
+    width: 100%;
+    /* height:100% fills the full td/th (works thanks to height:1px on parent) */
+    height: 100%;
+    min-height: 36px;
+    padding: 6px 8px;
+    outline: none;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #222;
+    box-sizing: border-box;
+    cursor: text;
+    word-break: break-word;
+    transition: background 0.1s;
+}
+.trix-table-editor__cell:focus {
+    background: #eff6ff;
+    box-shadow: inset 0 0 0 2px #3b82f6;
+}
+.trix-table-editor-table thead .trix-table-editor__cell {
+    font-weight: 600;
+}
+
+/* Footer */
+.trix-table-editor-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 12px 18px;
+    border-top: 1px solid #eee;
+    background: #f8f9fa;
+    border-radius: 0 0 10px 10px;
+}
+.trix-table-editor-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    border-radius: 7px;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s, box-shadow 0.15s;
+}
+.trix-table-editor-btn--secondary {
+    background: #e9ecef;
+    color: #444;
+}
+.trix-table-editor-btn--secondary:hover {
+    background: #dee2e6;
+}
+.trix-table-editor-btn--primary {
+    background: #2563eb;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+.trix-table-editor-btn--primary:hover {
+    background: #1d4ed8;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+/* =============================================================
+   TRIX TABLE - Rendu dans .trix-content (backend + frontend)
+   ============================================================= */
+
+.trix-content figure.attachment--trix-table {
+    display: block;
+    margin: 1em 0;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: outline 0.1s;
+}
+.trix-content figure.attachment--trix-table:hover {
+    outline: 2px solid #93c5fd;
+}
+.trix-content figure.attachment--trix-table.attachment--selected {
+    outline: 2px solid #2563eb;
+}
+
+.trix-content .trix-table,
+.trix-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.9em;
+    margin: 0;
+}
+.trix-content .trix-table th,
+.trix-content .trix-table td,
+.trix-table th,
+.trix-table td {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+.trix-content .trix-table thead th,
+.trix-table thead th {
+    background-color: #f0f4ff;
+    font-weight: 600;
+    color: #1e3a70;
+}
+
+figure[data-trix-content-type="trix-table"] {
+    width: 100%;
+}

@@ -1,0 +1,40 @@
+{
+  "name": "easyadmin-trix-extension-bundle",
+  "version": "1.0.0",
+  "description": "An extension for EasyAdmin that enriches the TextEditorField (Trix) editor with advanced features: Tables, Colors, H2/H3 headings, Underlining, ...",
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production --progress"
+  },
+  "keywords": [
+    "symfony",
+    "easyadmin",
+    "trix",
+    "wysiwyg",
+    "editor",
+    "text-editor",
+    "table",
+    "bundle",
+    "extension"
+  ],
+  "author": {
+    "name": "Ezar Affandi",
+    "email": "salez.ea@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ezar101/EasyAdminTrixExtensionBundle.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ezar101/EasyAdminTrixExtensionBundle/issues"
+  },
+  "homepage": "https://github.com/Ezar101/EasyAdminTrixExtensionBundle#readme",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@symfony/webpack-encore": "^6.0.0",
+    "webpack-notifier": "^1.15.0"
+  }
+}

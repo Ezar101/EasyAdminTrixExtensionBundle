@@ -1,0 +1,12 @@
+{
+  "entrypoints": {
+    "extended-trix": {
+      "css": [
+        "./extended-trix.5cd34196.css"
+      ],
+      "js": [
+        "./extended-trix.46fa5a2c.js"
+      ]
+    }
+  }
+}
