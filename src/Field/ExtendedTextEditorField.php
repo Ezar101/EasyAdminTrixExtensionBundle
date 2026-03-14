@@ -7,17 +7,62 @@ namespace Ezar101\EasyAdminTrixExtensionBundle\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Contracts\Field\FieldInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FieldTrait;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
-use Symfony\Component\Asset\PathPackage;
-use Symfony\Component\Asset\VersionStrategy\JsonManifestVersionStrategy;
+use EasyCorp\Bundle\EasyAdminBundle\Form\Type\TextEditorType;
+use Ezar101\EasyAdminTrixExtensionBundle\Config\Asset;
 use Symfony\Contracts\Translation\TranslatableInterface;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Asset as EasyAdminAsset;
 
 final class ExtendedTextEditorField implements FieldInterface
 {
     use FieldTrait;
 
-    public static function new(string $propertyName, TranslatableInterface|bool|string|null $label = null): TextEditorField
+    public static function new(string $propertyName, TranslatableInterface|bool|string|null $label = null): self
     {
-        $customConfig = [
+        return (new self)
+            ->setProperty($propertyName)
+            ->setLabel($label)
+            ->setTemplateName('crud/field/text_editor')
+            ->setFormType(TextEditorType::class)
+            ->addCssClass('field-text_editor')
+            ->addCssFiles(
+                EasyAdminAsset::fromEasyAdminAssetPackage('field-text-editor.css')->onlyOnForms(),
+                Asset::from('extended-trix.css'),
+            )
+            ->addJsFiles(
+                EasyAdminAsset::fromEasyAdminAssetPackage('field-text-editor.js')->onlyOnForms(),
+                Asset::from('extended-trix.js'),
+            )
+            ->setColumns('col-md-9 col-xxl-7')
+            ->setCustomOption(TextEditorField::OPTION_NUM_OF_ROWS, null)
+            ->setDefaultTrixConfig();
+    }
+
+    /** @see TextEditorField::setNumOfRows() */
+    public function setNumOfRows(int $rows): self
+    {
+        if ($rows < 1) {
+            throw new \InvalidArgumentException(sprintf('The argument of the "%s()" method must be 1 or higher (%d given).', __METHOD__, $rows));
+        }
+
+        $this->setCustomOption(TextEditorField::OPTION_NUM_OF_ROWS, $rows);
+
+        return $this;
+    }
+
+    /**
+     * @param array<string, mixed> $config
+     * @see TextEditorField::setTrixEditorConfig()
+     */
+    public function setTrixEditorConfig(array $config): self
+    {
+        $this->setCustomOption(TextEditorField::OPTION_TRIX_EDITOR_CONFIG, $config);
+
+        return $this;
+    }
+
+    private function setDefaultTrixConfig(): self
+    {
+        return $this->setTrixEditorConfig([
             'blockAttributes' => [
                 'default' => ['tagName' => 'p', 'parse' => false],
                 'heading2' => ['tagName' => 'h2', 'terminal' => true, 'breakOnReturn' => true, 'group' => false],
@@ -27,16 +72,6 @@ final class ExtendedTextEditorField implements FieldInterface
                 'color' => ['styleProperty' => 'color', 'inheritable' => true],
                 'underline' => ['tagName' => 'u', 'inheritable' => true],
             ],
-        ];
-
-        $package = new PathPackage(
-            '/bundles/easyadmintrixextension',
-            new JsonManifestVersionStrategy(__DIR__ . '/../../public/manifest.json'),
-        );
-
-        return TextEditorField::new($propertyName, $label)
-            ->setTrixEditorConfig($customConfig)
-            ->addCssFiles($package->getUrl('extended-trix.css'))
-            ->addJsFiles($package->getUrl('extended-trix.js'));
+        ]);
     }
 }
