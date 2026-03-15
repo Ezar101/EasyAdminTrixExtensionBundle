@@ -11,12 +11,13 @@ $finder = PhpCsFixer\Finder::create()
     ->files()
     ->name('*.php');
 
-return new PhpCsFixer\Config()
+return (new PhpCsFixer\Config())
     ->setParallelConfig(PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect())
     ->setRules([
         '@Symfony' => true,
         '@Symfony:risky' => true,
-        '@PHP84Migration' => true,
+        '@PHPUnit48Migration:risky' => true,
+        '@PHP8x2Migration' => true,
         'declare_strict_types' => true,
         'global_namespace_import' => [
             'import_classes' => true,

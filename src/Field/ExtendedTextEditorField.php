@@ -21,7 +21,7 @@ final class ExtendedTextEditorField implements FieldInterface
 
     public static function new(string $propertyName, TranslatableInterface|bool|string|null $label = null): self
     {
-        return new self()
+        return (new self())
             ->setProperty($propertyName)
             ->setLabel($label)
             ->setTemplateName('crud/field/text_editor')
