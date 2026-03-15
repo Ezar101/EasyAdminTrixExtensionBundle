@@ -1,0 +1,21 @@
+parameters:
+    level: 6
+    phpVersion: 80400
+    paths:
+        - src/
+        - tests/
+
+    excludePaths:
+        - vendor/
+
+    bootstrapFiles:
+        - vendor/bin/.phpunit/phpunit/vendor/autoload.php
+
+    ignoreErrors:
+        -
+            identifier: missingType.generics
+
+    treatPhpDocTypesAsCertain: false
+    reportUnmatchedIgnoredErrors: false
+
+    tmpDir: var/cache/phpstan

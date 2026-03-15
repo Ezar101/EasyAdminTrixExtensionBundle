@@ -4,8 +4,13 @@ declare(strict_types=1);
 
 namespace Ezar101\EasyAdminTrixExtensionBundle\Config;
 
+use JsonException;
+
+use const JSON_THROW_ON_ERROR;
+
 final class Asset
 {
+    /** @var array<string, string>|null */
     private static ?array $manifest = null;
 
     private function __construct()
@@ -20,8 +25,8 @@ final class Asset
             if (file_exists($path)) {
                 try {
                     $content = file_get_contents($path);
-                    self::$manifest = json_decode($content, true, 512, JSON_THROW_ON_ERROR) ?: [];
-                } catch (\JsonException $e) {
+                    self::$manifest = json_decode($content, true, 512, JSON_THROW_ON_ERROR) ?? [];
+                } catch (JsonException $e) {
                     self::$manifest = [];
                 }
             } else {
