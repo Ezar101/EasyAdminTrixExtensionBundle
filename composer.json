@@ -21,7 +21,7 @@
     }
   ],
   "require": {
-    "php": ">=8.4",
+    "php": ">=8.2",
     "symfony/framework-bundle": "^6.0|^7.0|^8.0",
     "easycorp/easyadmin-bundle": "^4.0|^5.0"
   },
