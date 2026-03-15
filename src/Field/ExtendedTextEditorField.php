@@ -4,13 +4,16 @@ declare(strict_types=1);
 
 namespace Ezar101\EasyAdminTrixExtensionBundle\Field;
 
+use EasyCorp\Bundle\EasyAdminBundle\Config\Asset as EasyAdminAsset;
 use EasyCorp\Bundle\EasyAdminBundle\Contracts\Field\FieldInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FieldTrait;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Form\Type\TextEditorType;
 use Ezar101\EasyAdminTrixExtensionBundle\Config\Asset;
+use InvalidArgumentException;
 use Symfony\Contracts\Translation\TranslatableInterface;
-use EasyCorp\Bundle\EasyAdminBundle\Config\Asset as EasyAdminAsset;
+
+use function sprintf;
 
 final class ExtendedTextEditorField implements FieldInterface
 {
@@ -18,7 +21,7 @@ final class ExtendedTextEditorField implements FieldInterface
 
     public static function new(string $propertyName, TranslatableInterface|bool|string|null $label = null): self
     {
-        return (new self)
+        return new self()
             ->setProperty($propertyName)
             ->setLabel($label)
             ->setTemplateName('crud/field/text_editor')
@@ -41,7 +44,7 @@ final class ExtendedTextEditorField implements FieldInterface
     public function setNumOfRows(int $rows): self
     {
         if ($rows < 1) {
-            throw new \InvalidArgumentException(sprintf('The argument of the "%s()" method must be 1 or higher (%d given).', __METHOD__, $rows));
+            throw new InvalidArgumentException(sprintf('The argument of the "%s()" method must be 1 or higher (%d given).', __METHOD__, $rows));
         }
 
         $this->setCustomOption(TextEditorField::OPTION_NUM_OF_ROWS, $rows);
@@ -51,6 +54,7 @@ final class ExtendedTextEditorField implements FieldInterface
 
     /**
      * @param array<string, mixed> $config
+     *
      * @see TextEditorField::setTrixEditorConfig()
      */
     public function setTrixEditorConfig(array $config): self

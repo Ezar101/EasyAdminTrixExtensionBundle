@@ -1,6 +1,9 @@
 composer.lock
 var
 vendor/*
+.phpunit.result.cache
+/phpunit.xml
+.php-cs-fixer.cache
 
 /node_modules/
 npm-debug.log

@@ -4,6 +4,7 @@
     <a href="https://packagist.org/packages/ezar101/easyadmin-trix-extension-bundle"><img src="https://poser.pugx.org/ezar101/easyadmin-trix-extension-bundle/v" alt="Latest Stable Version"></a>
     <a href="https://packagist.org/packages/ezar101/easyadmin-trix-extension-bundle"><img src="https://poser.pugx.org/ezar101/easyadmin-trix-extension-bundle/downloads" alt="Total Downloads"></a>
     <a href="LICENSE"><img src="https://poser.pugx.org/ezar101/easyadmin-trix-extension-bundle/license" alt="License"></a>
+    <a href="https://github.com/Ezar101/EasyAdminTrixExtensionBundle/actions/workflows/ci.yaml"><img src="https://github.com/Ezar101/EasyAdminTrixExtensionBundle/actions/workflows/ci.yaml/badge.svg" alt="CI"></a>
 </p>
 
 This Symfony bundle extends the native capabilities of EasyAdmin's `TextEditorField` (based on Trix). It offers an enhanced writing experience by adding essential features that are missing by default, all without any complex front-end configuration.
